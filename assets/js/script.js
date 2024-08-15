@@ -134,3 +134,29 @@ function showQuestion() {
         document.getElementById('next-button').style.display = 'none';
     }
 }
+
+// Function to handle the 'Submit Answer' button click
+function checkAnswer () {
+    let userAnswer = document.getElementById('answer-input');
+    let userInput = userAnswer.value.trim().toLowerCase(); // to convert the user's answer to lower case 
+    console.log("User Input", userInput);
+    let correctAnswer = questions[currentQuestionIndex].capital.toLowerCase(); // to convert the answer to lower case to ensure exact matches for spelling
+    console.log("Correct Answer", correctAnswer);
+    let feedback = document.getElementById('feedback');
+
+    if (userInput === correctAnswer) {
+        feedback.textContent = 'Congrats you did it!'
+        feedback.style.color = 'green';
+        score++
+        document.getElementById('next-button').style.display = 'block';
+        document.getElementById('submit-button').style.display = 'none';
+    } else {
+        feedback.textContent = `Unlucky, you said ${userInput}, the correct answer is ${correctAnswer}`;
+        feedback.style.color = 'red';
+        document.getElementById('next-button').style.display = 'block';
+        document.getElementById('submit-button').style.display = 'none';
+    }
+
+    console.log("Current Score", score); // to ensure the score is incremented properly
+    console.log("Next Question Index:", currentQuestionIndex + 1); // to check that the index will increase by one 
+}
