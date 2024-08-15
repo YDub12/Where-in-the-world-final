@@ -93,14 +93,33 @@ function shuffleQuestions(array) {
 function startQuiz(region) {
     currentRegion = region;
     questions = shuffleQuestions(quizData[region]);
-    console.log("Shuffled Questions", questions);
+    console.log("Shuffled Questions", questions); // to debug and ensure the array has shuffled correctly 
     currentQuestionIndex = 0;
     score = 0;
 
+    //to display the Quiz area
     document.getElementById('region-selection').style.display = 'none';
     document.getElementById('quiz').style.display = 'block';
     document.getElementById('result').style.display = 'none';
     document.getElementById('next-button').style.display = 'none';
 
+    //call the next function in the list
     showQuestion();
+}
+
+// Function to display the current question
+function showQuestion() {
+    let questionText = document.getElementById('question-text');
+    let currentQuestion = questions[currentQuestionIndex];
+
+    console.log("Current Question:", currentQuestion);
+    
+
+    if (currentQuestion) {
+        questionText.textContent = `What is the capital of ${currentQuestion.country}?`;
+        document.getElementById('answer-input').value = '';
+        document.getElementById('answer-input').focus();
+        document.getElementById('submit-button').style.display = 'block';
+        document.getElementById('next-button').style.display = 'none';
+    }
 }
