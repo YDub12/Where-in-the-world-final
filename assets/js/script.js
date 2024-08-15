@@ -86,5 +86,21 @@ function shuffleQuestions(array) {
         let j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j],array[i]];
     }
-    return{array};
+    return array;
+}
+
+// Function to start the quiz for a selected region
+function startQuiz(region) {
+    currentRegion = region;
+    questions = shuffleQuestions(quizData[region]);
+    console.log("Shuffled Questions", questions);
+    currentQuestionIndex = 0;
+    score = 0;
+
+    document.getElementById('region-selection').style.display = 'none';
+    document.getElementById('quiz').style.display = 'block';
+    document.getElementById('result').style.display = 'none';
+    document.getElementById('next-button').style.display = 'none';
+
+    showQuestion();
 }
