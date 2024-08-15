@@ -24,6 +24,17 @@ document.addEventListener('DOMContentLoaded', function() {
             welcomeMessage.textContent = 'Please enter a valid username.';
         }
     });
+
+    // to monitor for enter key being pressed
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            if (document.getElementById('submit-button').style.display === 'block') {
+                checkAnswer();  // Trigger submit answer
+            } else if (document.getElementById('next-button').style.display === 'block') {
+                nextQuestion(); // Trigger next question
+            }
+        }
+    });
   // Optionally: Load and display the stored username on page load
   let storedUsername = localStorage.getItem('username');
   if (storedUsername) {
