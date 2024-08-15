@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+.quiz-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+    text-align: center;
+}
+.question {
+    margin: 20px 0;
+}
+
+#answer-input{
+    padding: 10px;
+    margin: 10px;
+}
+#user-form input {
+    padding: 10px;
+    margin: 10px 0 10px 0;
+}
+#user-form button {
+    width: 150px;
+}
+#submit-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#submit-button:hover {
+    background-color: #218838;
+}
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #218838;
+}
+#next-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #1cc5c5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#submit-button:hover {
+    background-color: #0d5c5c;
+}
+.region-selection {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.region-selection button {
+    width: 150px;
+    margin: 10px;
+    background-color: #007bff;
+}
+.region-selection button:hover {
+    background-color: #0056b3;
+}
+
+#username-table-section {
+    display: none;
+}

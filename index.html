@@ -5,9 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="assets/css/style.css">
-</head>
 <body>
+    <div class="quiz-container">
+        <h1>Geography Quiz</h1>
+        <section id="user-form">
+            <form action="POST" id="username-form">
+                <label for="username">Enter your username</label>
+                <input type="text" name="username" id="username-input" placeholder="username" required>
+                <button type="submit" id="username-submit">Submit</button>
+            </form>
+            <p id="welcome-message"></p>
+        </section>
+        <section id="region-selection" class="region-selection">
+            <h2>Select a Region</h2>
+            <button onclick="startQuiz('europe')">Europe</button>
+            <button onclick="startQuiz('africa')">Africa</button>
+            <button onclick="startQuiz('asia')">Asia</button>
+        </section>
+        <section id="quiz" style="display:none;">
+            <div class="question">
+                <p id="question-text"></p>
+                <input type = "text" id = "answer-input" placeholder="Enter your answer here" />
+                <button id="submit-button" onclick="checkAnswer()">Submit Answer</button>
+                <button id="next-button" onclick="nextQuestion()">Next</button>
+                <p id="feedback"></p>
+            </div>
+        </section>
+        
+        <section id="result">
+            <h2>Your Score: <span id="score"></span></h2>
+            <button onclick="restartQuiz()">Restart Quiz</button>
+        </section>
     
+    </div>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
